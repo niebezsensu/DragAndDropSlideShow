@@ -49,8 +49,18 @@
     
     $('.gallery').show();
     
+    $('#go').hide();
+    $('#back').show();
+    
   });
  })
+ $('#back').on('click', function() {
+  $('.gallery').html('');
+  $('.gallery').hide();
+  $( ".placeground" ).fadeIn(500);
+  $('#back').hide();
+    $('#go').show();
+ });
  
  setInterval(function(){ 
   $('.gallery').find('.next').fadeIn(1000, function() {
