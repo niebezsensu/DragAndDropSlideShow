@@ -1,9 +1,13 @@
+ var a = 3;
+
  $(function() {
 
-  $(".im").draggable();
-
-
-
+    $(".im").draggable({
+   drag: function(event, ui){
+    $(this).css('z-index', ++a);
+   }
+   
+  });
 
   $(".placeholder").droppable({
    drop: function(event, ui) {
@@ -34,6 +38,12 @@
   });
   
  $('#go').on('click', function() {
+  
+    if($('.gallery').children().length === 0){
+   return;
+  }
+  
+  
    $( ".placeground" ).fadeOut(500, function() {
     // Animation complete.
     
